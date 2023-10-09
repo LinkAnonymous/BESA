@@ -31,3 +31,14 @@ See also the CMD-argument documentation.
 ```
 bash main_exps.sh
 ```
+
+## Others
+In the experiment section of our paper, we present the results of row-wise sparsity, which customize sparsity for each row of target layer's weight within in the block. Additionally, we provide an extension presenting the outcomes of layer-wise sparsity, where each row of the target layer is assigned uniform sparsity. You can find the commands to execute the layer-wise sparsity experiments in the **main_exps.sh** script. Below, we present the perplexity results for the Wikitext2 dataset.
+
+|                   | 1-7B | 1-13B | 1-30B | 1-65B | 2-7B | 2-13B | 2-70B |
+|------------------:|:-----|:------|:------|:------|:-----|:------|:------|
+| Dense             | 5.68 | 5.09  | 4.10  | 3.53  | 5.47 | 4.88  | 3.31  |
+| SparseGPT         | 7.22 | 6.21  | 5.33  | 4.60  | 6.99 | 6.02  | 4.25  |
+| Wanda             | 7.26 | 6.15  | 5.25  | 4.60  | 6.92 | 5.97  | 4.22  |
+| BESA (layer-wise) | 7.04 | 6.07  | 5.16  | 4.51  | 6.77 | 5.85  | 4.14  |
+| BESA (row-wise)   | 6.86 | 5.92  | 5.00  | 4.33  | 6.60 | 5.75  | 4.09  |
